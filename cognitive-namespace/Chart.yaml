@@ -1,0 +1,21 @@
+apiVersion: v2
+name: cognitive-namespace
+description: |
+  Kubernetes namespace management for multi-tenant neural-network deployment.
+  Provisions an isolated namespace with RBAC, resource quotas, limit ranges,
+  and network policies.
+
+  Fixes ruvnet/ruv-FANN flaw #10: single-tenant architecture with no namespace
+  isolation and no multi-tenant fabric.
+type: application
+version: 0.1.0
+appVersion: "1.0.0"
+keywords:
+  - neural-network
+  - multi-tenant
+  - kubernetes
+  - rbac
+  - betterFANN
+home: https://github.com/dubzrn/betterFANN
+maintainers:
+  - name: betterFANN

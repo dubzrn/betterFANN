@@ -1,0 +1,14 @@
+{{- /*
+  Namespace — the root isolation unit for a tenant's neural-network workloads.
+*/ -}}
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: {{ .Values.namespace.name | quote }}
+  labels:
+    {{- range $k, $v := .Values.namespace.labels }}
+    {{ $k }}: {{ $v | quote }}
+    {{- end }}
+    helm.sh/chart: {{ printf "%s-%s" .Chart.Name .Chart.Version | quote }}
+    app.kubernetes.io/name: {{ .Chart.Name | quote }}
+    app.kubernetes.io/instance: {{ .Release.Name | quote }}

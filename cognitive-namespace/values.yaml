@@ -1,0 +1,70 @@
+# cognitive-namespace values
+# Each top-level key maps to a distinct tenant or workload namespace.
+
+# Namespace configuration
+namespace:
+  # Name of the Kubernetes namespace to create.
+  name: cognitive-workloads
+  # Extra labels applied to the namespace resource.
+  labels:
+    app.kubernetes.io/managed-by: helm
+    betterFANN/component: cognitive-namespace
+
+# RBAC
+rbac:
+  # Create a ServiceAccount, Role, and RoleBinding for the tenant.
+  enabled: true
+  serviceAccount:
+    name: cognitive-sa
+    annotations: {}
+  # Verbs granted to the cognitive-sa role within the namespace.
+  rules:
+    - apiGroups: [""]
+      resources: ["pods", "services", "configmaps", "secrets"]
+      verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+    - apiGroups: ["apps"]
+      resources: ["deployments", "statefulsets"]
+      verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+    - apiGroups: ["batch"]
+      resources: ["jobs"]
+      verbs: ["get", "list", "watch", "create", "delete"]
+
+# Resource quotas — prevent a single tenant from exhausting cluster resources.
+resourceQuota:
+  enabled: true
+  hard:
+    requests.cpu: "4"
+    requests.memory: "8Gi"
+    limits.cpu: "8"
+    limits.memory: "16Gi"
+    pods: "50"
+    services: "10"
+    persistentvolumeclaims: "5"
+
+# Limit ranges — ensure every pod/container specifies sensible defaults.
+limitRange:
+  enabled: true
+  container:
+    default:
+      cpu: "500m"
+      memory: "512Mi"
+    defaultRequest:
+      cpu: "100m"
+      memory: "128Mi"
+    max:
+      cpu: "4"
+      memory: "8Gi"
+    min:
+      cpu: "50m"
+      memory: "64Mi"
+
+# Network policies
+networkPolicy:
+  # Deny all ingress by default; allow only explicitly whitelisted sources.
+  denyAllIngress: true
+  # Allow intra-namespace traffic (pods talking to each other).
+  allowIntraNamespace: true
+  # Additional ingress allow rules (list of namespaceSelector labels).
+  additionalIngressAllowNamespaces: []
+  # Deny all egress by default (set to false to allow external egress).
+  denyAllEgress: false

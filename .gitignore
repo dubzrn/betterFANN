@@ -1,0 +1,21 @@
+# Rust build artifacts
+**/target/
+
+# TypeScript compiled output and dependencies
+node_modules/
+dist/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.pytest_cache/
+
+# Go
+go.sum
+
+# Editor
+.vscode/
+.idea/
+*.swp

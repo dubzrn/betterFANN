@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "cognitive-pattern-gan"
+version = "0.1.0"
+description = "GAN for generating cognitive activation patterns — fixes ruvnet's 7 hardcoded patterns (flaw #9)"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["cognitive_pattern_gan*"]

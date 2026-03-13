@@ -1,0 +1,12 @@
+{{- if .Values.resourceQuota.enabled -}}
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: {{ printf "%s-quota" .Values.namespace.name | quote }}
+  namespace: {{ .Values.namespace.name | quote }}
+spec:
+  hard:
+    {{- range $k, $v := .Values.resourceQuota.hard }}
+    {{ $k }}: {{ $v | quote }}
+    {{- end }}
+{{- end }}

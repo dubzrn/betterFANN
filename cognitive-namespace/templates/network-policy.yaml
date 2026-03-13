@@ -1,0 +1,65 @@
+{{- if .Values.networkPolicy.denyAllIngress -}}
+---
+# Deny all ingress to the namespace by default.
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: deny-all-ingress
+  namespace: {{ .Values.namespace.name | quote }}
+spec:
+  podSelector: {}
+  policyTypes:
+    - Ingress
+{{- end }}
+
+{{- if .Values.networkPolicy.allowIntraNamespace }}
+---
+# Allow pods within the same namespace to communicate freely.
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-intra-namespace
+  namespace: {{ .Values.namespace.name | quote }}
+spec:
+  podSelector: {}
+  policyTypes:
+    - Ingress
+  ingress:
+    - from:
+        - podSelector: {}
+{{- end }}
+
+{{- range $idx, $nsLabels := .Values.networkPolicy.additionalIngressAllowNamespaces }}
+---
+# Allow ingress from namespace matching the provided label selector.
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: {{ printf "allow-from-ns-%d" $idx | quote }}
+  namespace: {{ $.Values.namespace.name | quote }}
+spec:
+  podSelector: {}
+  policyTypes:
+    - Ingress
+  ingress:
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              {{- range $k, $v := $nsLabels }}
+              {{ $k }}: {{ $v | quote }}
+              {{- end }}
+{{- end }}
+
+{{- if .Values.networkPolicy.denyAllEgress }}
+---
+# Deny all egress from the namespace.
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: deny-all-egress
+  namespace: {{ .Values.namespace.name | quote }}
+spec:
+  podSelector: {}
+  policyTypes:
+    - Egress
+{{- end }}

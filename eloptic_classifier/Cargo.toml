@@ -2,7 +2,13 @@
 name = "eloptic_classifier"
 version = "0.1.0"
 edition = "2021"
+description = "Extensible classifier with trait-based activation functions and SIMD-optimised inference"
+license = "MIT"
 
 [dependencies]
 rand = "0.8"
 blake3 = "1"
+zeroize = { version = "1", features = ["derive"] }
+
+[dev-dependencies]
+rand = "0.8"

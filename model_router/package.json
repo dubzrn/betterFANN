@@ -1,0 +1,16 @@
+{
+  "name": "model-router",
+  "version": "0.1.0",
+  "description": "Intelligent model routing and load balancing — fixes ruvnet vendor lock (flaw #7)",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "node --test dist/tests/index.test.js",
+    "check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "@types/node": "^20.0.0"
+  }
+}

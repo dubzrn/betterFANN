@@ -1,0 +1,12 @@
+[package]
+name = "pq-transport"
+version = "0.1.0"
+edition = "2021"
+description = "MODULE 8 — PostQuantumChannel: Kyber1024 KEM + Dilithium5 signatures"
+license = "MIT"
+
+[dependencies]
+pqcrypto-kyber = "0.8"
+pqcrypto-dilithium = "0.5"
+pqcrypto-traits = "0.3"
+blake3 = "1"

@@ -1,0 +1,11 @@
+[package]
+name = "ephemeral-lifecycle"
+version = "0.1.0"
+edition = "2021"
+description = "MODULE 7 — CryptoEphemeralNet: secure neural weights with memory zeroing on drop"
+license = "MIT"
+
+[dependencies]
+zeroize = { version = "1", features = ["derive"] }
+secrecy = "0.8"
+subtle = "2"

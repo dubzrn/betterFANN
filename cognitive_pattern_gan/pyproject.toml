@@ -1,12 +1,12 @@
 [build-system]
 requires = ["setuptools>=68", "wheel"]
-build-backend = "setuptools.backends.legacy:build"
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "cognitive-pattern-gan"
 version = "0.1.0"
 description = "GAN for generating cognitive activation patterns — fixes ruvnet's 7 hardcoded patterns (flaw #9)"
-license = { text = "MIT" }
+license = "MIT"
 requires-python = ">=3.9"
 dependencies = []
 

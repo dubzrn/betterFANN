@@ -1,0 +1,265 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="1200" height="340">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0e1a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#0d1b3e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a0e1a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#7c3aed;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f472b6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="nodeGlow">
+      <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#7c3aed;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#0a0e1a;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="340" fill="url(#bgGrad)" rx="12"/>
+
+  <!-- Center radial glow -->
+  <ellipse cx="600" cy="170" rx="350" ry="200" fill="url(#centerGlow)"/>
+
+  <!-- Grid lines (subtle) -->
+  <g opacity="0.04" stroke="#6366f1" stroke-width="0.5">
+    <line x1="0" y1="85" x2="1200" y2="85"/>
+    <line x1="0" y1="170" x2="1200" y2="170"/>
+    <line x1="0" y1="255" x2="1200" y2="255"/>
+    <line x1="300" y1="0" x2="300" y2="340"/>
+    <line x1="600" y1="0" x2="600" y2="340"/>
+    <line x1="900" y1="0" x2="900" y2="340"/>
+  </g>
+
+  <!-- ═══════════════════════════════════ -->
+  <!-- Neural Network Nodes — LEFT CLUSTER -->
+  <!-- ═══════════════════════════════════ -->
+
+  <!-- Input layer nodes (left) -->
+  <circle cx="60" cy="90" r="8" fill="#00d4ff" filter="url(#nodeGlow)" opacity="0.9"/>
+  <circle cx="60" cy="130" r="8" fill="#00d4ff" filter="url(#nodeGlow)" opacity="0.9"/>
+  <circle cx="60" cy="170" r="8" fill="#00d4ff" filter="url(#nodeGlow)" opacity="0.9"/>
+  <circle cx="60" cy="210" r="8" fill="#00d4ff" filter="url(#nodeGlow)" opacity="0.9"/>
+  <circle cx="60" cy="250" r="8" fill="#00d4ff" filter="url(#nodeGlow)" opacity="0.9"/>
+
+  <!-- Hidden layer 1 nodes -->
+  <circle cx="140" cy="105" r="7" fill="#818cf8" filter="url(#nodeGlow)" opacity="0.85"/>
+  <circle cx="140" cy="145" r="7" fill="#818cf8" filter="url(#nodeGlow)" opacity="0.85"/>
+  <circle cx="140" cy="185" r="7" fill="#818cf8" filter="url(#nodeGlow)" opacity="0.85"/>
+  <circle cx="140" cy="225" r="7" fill="#818cf8" filter="url(#nodeGlow)" opacity="0.85"/>
+
+  <!-- Hidden layer 2 nodes -->
+  <circle cx="210" cy="120" r="7" fill="#a78bfa" filter="url(#nodeGlow)" opacity="0.8"/>
+  <circle cx="210" cy="165" r="7" fill="#a78bfa" filter="url(#nodeGlow)" opacity="0.8"/>
+  <circle cx="210" cy="210" r="7" fill="#a78bfa" filter="url(#nodeGlow)" opacity="0.8"/>
+
+  <!-- Connections — input to hidden1 -->
+  <g stroke="#00d4ff" stroke-width="0.6" opacity="0.25">
+    <line x1="68" y1="90" x2="133" y2="105"/>
+    <line x1="68" y1="90" x2="133" y2="145"/>
+    <line x1="68" y1="90" x2="133" y2="185"/>
+    <line x1="68" y1="90" x2="133" y2="225"/>
+    <line x1="68" y1="130" x2="133" y2="105"/>
+    <line x1="68" y1="130" x2="133" y2="145"/>
+    <line x1="68" y1="130" x2="133" y2="185"/>
+    <line x1="68" y1="130" x2="133" y2="225"/>
+    <line x1="68" y1="170" x2="133" y2="105"/>
+    <line x1="68" y1="170" x2="133" y2="145"/>
+    <line x1="68" y1="170" x2="133" y2="185"/>
+    <line x1="68" y1="170" x2="133" y2="225"/>
+    <line x1="68" y1="210" x2="133" y2="105"/>
+    <line x1="68" y1="210" x2="133" y2="145"/>
+    <line x1="68" y1="210" x2="133" y2="185"/>
+    <line x1="68" y1="210" x2="133" y2="225"/>
+    <line x1="68" y1="250" x2="133" y2="105"/>
+    <line x1="68" y1="250" x2="133" y2="145"/>
+    <line x1="68" y1="250" x2="133" y2="185"/>
+    <line x1="68" y1="250" x2="133" y2="225"/>
+  </g>
+
+  <!-- Connections — hidden1 to hidden2 -->
+  <g stroke="#818cf8" stroke-width="0.6" opacity="0.25">
+    <line x1="147" y1="105" x2="203" y2="120"/>
+    <line x1="147" y1="105" x2="203" y2="165"/>
+    <line x1="147" y1="105" x2="203" y2="210"/>
+    <line x1="147" y1="145" x2="203" y2="120"/>
+    <line x1="147" y1="145" x2="203" y2="165"/>
+    <line x1="147" y1="145" x2="203" y2="210"/>
+    <line x1="147" y1="185" x2="203" y2="120"/>
+    <line x1="147" y1="185" x2="203" y2="165"/>
+    <line x1="147" y1="185" x2="203" y2="210"/>
+    <line x1="147" y1="225" x2="203" y2="120"/>
+    <line x1="147" y1="225" x2="203" y2="165"/>
+    <line x1="147" y1="225" x2="203" y2="210"/>
+  </g>
+
+  <!-- ════════════════════════════════════ -->
+  <!-- Neural Network Nodes — RIGHT CLUSTER -->
+  <!-- ════════════════════════════════════ -->
+
+  <!-- Output layer -->
+  <circle cx="1140" cy="120" r="8" fill="#f472b6" filter="url(#nodeGlow)" opacity="0.9"/>
+  <circle cx="1140" cy="170" r="8" fill="#f472b6" filter="url(#nodeGlow)" opacity="0.9"/>
+  <circle cx="1140" cy="220" r="8" fill="#f472b6" filter="url(#nodeGlow)" opacity="0.9"/>
+
+  <!-- Hidden right layer 1 -->
+  <circle cx="1060" cy="105" r="7" fill="#c084fc" filter="url(#nodeGlow)" opacity="0.85"/>
+  <circle cx="1060" cy="150" r="7" fill="#c084fc" filter="url(#nodeGlow)" opacity="0.85"/>
+  <circle cx="1060" cy="195" r="7" fill="#c084fc" filter="url(#nodeGlow)" opacity="0.85"/>
+  <circle cx="1060" cy="240" r="7" fill="#c084fc" filter="url(#nodeGlow)" opacity="0.85"/>
+
+  <!-- Hidden right layer 2 -->
+  <circle cx="990" cy="95" r="7" fill="#818cf8" filter="url(#nodeGlow)" opacity="0.8"/>
+  <circle cx="990" cy="140" r="7" fill="#818cf8" filter="url(#nodeGlow)" opacity="0.8"/>
+  <circle cx="990" cy="185" r="7" fill="#818cf8" filter="url(#nodeGlow)" opacity="0.8"/>
+  <circle cx="990" cy="230" r="7" fill="#818cf8" filter="url(#nodeGlow)" opacity="0.8"/>
+  <circle cx="990" cy="275" r="7" fill="#818cf8" filter="url(#nodeGlow)" opacity="0.8"/>
+
+  <!-- Connections right hidden2 to hidden1 -->
+  <g stroke="#c084fc" stroke-width="0.6" opacity="0.25">
+    <line x1="997" y1="95" x2="1053" y2="105"/>
+    <line x1="997" y1="95" x2="1053" y2="150"/>
+    <line x1="997" y1="95" x2="1053" y2="195"/>
+    <line x1="997" y1="95" x2="1053" y2="240"/>
+    <line x1="997" y1="140" x2="1053" y2="105"/>
+    <line x1="997" y1="140" x2="1053" y2="150"/>
+    <line x1="997" y1="140" x2="1053" y2="195"/>
+    <line x1="997" y1="140" x2="1053" y2="240"/>
+    <line x1="997" y1="185" x2="1053" y2="105"/>
+    <line x1="997" y1="185" x2="1053" y2="150"/>
+    <line x1="997" y1="185" x2="1053" y2="195"/>
+    <line x1="997" y1="185" x2="1053" y2="240"/>
+    <line x1="997" y1="230" x2="1053" y2="105"/>
+    <line x1="997" y1="230" x2="1053" y2="150"/>
+    <line x1="997" y1="230" x2="1053" y2="195"/>
+    <line x1="997" y1="230" x2="1053" y2="240"/>
+    <line x1="997" y1="275" x2="1053" y2="105"/>
+    <line x1="997" y1="275" x2="1053" y2="150"/>
+    <line x1="997" y1="275" x2="1053" y2="195"/>
+    <line x1="997" y1="275" x2="1053" y2="240"/>
+  </g>
+
+  <!-- Connections right hidden1 to output -->
+  <g stroke="#f472b6" stroke-width="0.6" opacity="0.25">
+    <line x1="1067" y1="105" x2="1132" y2="120"/>
+    <line x1="1067" y1="105" x2="1132" y2="170"/>
+    <line x1="1067" y1="105" x2="1132" y2="220"/>
+    <line x1="1067" y1="150" x2="1132" y2="120"/>
+    <line x1="1067" y1="150" x2="1132" y2="170"/>
+    <line x1="1067" y1="150" x2="1132" y2="220"/>
+    <line x1="1067" y1="195" x2="1132" y2="120"/>
+    <line x1="1067" y1="195" x2="1132" y2="170"/>
+    <line x1="1067" y1="195" x2="1132" y2="220"/>
+    <line x1="1067" y1="240" x2="1132" y2="120"/>
+    <line x1="1067" y1="240" x2="1132" y2="170"/>
+    <line x1="1067" y1="240" x2="1132" y2="220"/>
+  </g>
+
+  <!-- ═══════════════════════════ -->
+  <!--  Accent horizontal bar     -->
+  <!-- ═══════════════════════════ -->
+  <rect x="260" y="195" width="680" height="2" rx="1" fill="url(#accentGrad)" opacity="0.5"/>
+
+  <!-- ═══════════════════════════ -->
+  <!--  Main Title                 -->
+  <!-- ═══════════════════════════ -->
+  <text x="600" y="115"
+        font-family="'Segoe UI', 'SF Pro Display', 'Inter', 'Helvetica Neue', Arial, sans-serif"
+        font-size="88"
+        font-weight="800"
+        text-anchor="middle"
+        fill="url(#titleGrad)"
+        filter="url(#softGlow)"
+        letter-spacing="-2">betterFANN</text>
+
+  <!-- ═══════════════════════════ -->
+  <!--  Tagline                    -->
+  <!-- ═══════════════════════════ -->
+  <text x="600" y="158"
+        font-family="'Segoe UI', 'SF Pro Display', 'Inter', 'Helvetica Neue', Arial, sans-serif"
+        font-size="17"
+        font-weight="400"
+        text-anchor="middle"
+        fill="#94a3b8"
+        letter-spacing="0.5">AI-enhanced neural engine — architecturally superior successor to FANN &amp; ruv-FANN</text>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!--  Five language pills                                            -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+
+  <!-- Rust -->
+  <rect x="265" y="215" width="90" height="26" rx="13" fill="#ce4a04" opacity="0.85"/>
+  <text x="310" y="233" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600"
+        text-anchor="middle" fill="#ffffff">⚙ Rust</text>
+
+  <!-- TypeScript -->
+  <rect x="369" y="215" width="118" height="26" rx="13" fill="#3178c6" opacity="0.85"/>
+  <text x="428" y="233" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600"
+        text-anchor="middle" fill="#ffffff">TS TypeScript</text>
+
+  <!-- Go -->
+  <rect x="501" y="215" width="72" height="26" rx="13" fill="#00add8" opacity="0.85"/>
+  <text x="537" y="233" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600"
+        text-anchor="middle" fill="#ffffff">● Go</text>
+
+  <!-- Python -->
+  <rect x="587" y="215" width="100" height="26" rx="13" fill="#3671a4" opacity="0.85"/>
+  <text x="637" y="233" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600"
+        text-anchor="middle" fill="#ffffff">🐍 Python</text>
+
+  <!-- Helm/K8s -->
+  <rect x="701" y="215" width="94" height="26" rx="13" fill="#326ce5" opacity="0.85"/>
+  <text x="748" y="233" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600"
+        text-anchor="middle" fill="#ffffff">☸ Helm/K8s</text>
+
+  <!-- Wasm -->
+  <rect x="809" y="215" width="82" height="26" rx="13" fill="#7c3aed" opacity="0.85"/>
+  <text x="850" y="233" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600"
+        text-anchor="middle" fill="#ffffff">⬡ WASM</text>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!--  Stats row                                                      -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <text x="600" y="282"
+        font-family="'Segoe UI', 'SF Pro Display', 'Inter', Arial, sans-serif"
+        font-size="13"
+        font-weight="300"
+        text-anchor="middle"
+        fill="#64748b"
+        letter-spacing="3">13 MODULES  ·  11 FLAWS FIXED  ·  5 LANGUAGES  ·  AVX2 SIMD  ·  POST-QUANTUM  ·  CRDT</text>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!--  Bottom border accent                                           -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <rect x="0" y="336" width="1200" height="4" rx="0" fill="url(#accentGrad)"/>
+
+  <!-- Top border accent -->
+  <rect x="0" y="0" width="1200" height="3" rx="0" fill="url(#accentGrad)"/>
+
+</svg>

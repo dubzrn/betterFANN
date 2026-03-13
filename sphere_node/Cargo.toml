@@ -13,3 +13,8 @@ serde_json = "1"
 
 [dev-dependencies]
 tokio = { version = "1", features = ["full", "test-util"] }
+criterion = { version = "0.5", features = ["html_reports"] }
+
+[[bench]]
+name = "crdt_bench"
+harness = false

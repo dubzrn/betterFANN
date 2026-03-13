@@ -1,0 +1,2 @@
+cargo:rerun-if-changed=build.rs
+cargo:rustc-env=DEBUG_OUTPUT_DIR=/home/runner/work/betterFANN/betterFANN/nexgen-neural-wasm/target/debug/build/wit-bindgen-rust-macro-71a8b439e7adf971/out

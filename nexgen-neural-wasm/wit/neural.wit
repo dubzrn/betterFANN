@@ -1,0 +1,42 @@
+/// nexgen-neural-wasm — WIT interface for the WASM Component Model.
+///
+/// Package:  local:neural@0.1.0
+/// World:    neural-world
+/// Build:    cargo build --target wasm32-wasi
+package local:neural@0.1.0;
+
+/// Neural inference interface exposed by the component.
+interface neural {
+  /// Configuration for a single fully-connected layer.
+  record layer-config {
+    /// Number of input features consumed by this layer.
+    input-size: u32,
+    /// Number of output neurons produced by this layer.
+    output-size: u32,
+    /// Activation function name.
+    /// Supported: "relu", "sigmoid", "tanh", "leaky-relu", "linear".
+    activation: string,
+  }
+
+  /// Run a forward pass through a multi-layer neural network.
+  ///
+  /// `weights` is the flat, row-major concatenation of every layer's weight
+  /// matrix followed immediately by that layer's bias vector.  Layers are
+  /// consumed left-to-right in the same order as `layer-configs`.
+  ///
+  /// Returns the output-activation vector of the final layer, or an empty
+  /// list when the inputs are inconsistent.
+  infer: func(
+    weights: list<float64>,
+    input: list<float64>,
+    layer-configs: list<layer-config>,
+  ) -> list<float64>;
+
+  /// Return the human-readable component version string.
+  version: func() -> string;
+}
+
+/// Top-level WASM Component Model world.
+world neural-world {
+  export neural;
+}

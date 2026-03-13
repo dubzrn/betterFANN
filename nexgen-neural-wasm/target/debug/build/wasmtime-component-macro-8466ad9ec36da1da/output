@@ -1,0 +1,2 @@
+cargo:rerun-if-changed=build.rs
+cargo:rustc-env=DEBUG_OUTPUT_DIR=/home/runner/work/betterFANN/betterFANN/nexgen-neural-wasm/target/debug/build/wasmtime-component-macro-8466ad9ec36da1da/out

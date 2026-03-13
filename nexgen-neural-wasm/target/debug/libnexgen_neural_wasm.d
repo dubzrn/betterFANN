@@ -1,0 +1,1 @@
+/home/runner/work/betterFANN/betterFANN/nexgen-neural-wasm/target/debug/libnexgen_neural_wasm.rlib: /home/runner/work/betterFANN/betterFANN/nexgen-neural-wasm/src/inference.rs /home/runner/work/betterFANN/betterFANN/nexgen-neural-wasm/src/lib.rs

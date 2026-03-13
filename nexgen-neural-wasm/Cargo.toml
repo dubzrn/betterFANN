@@ -1,0 +1,22 @@
+[package]
+name = "nexgen-neural-wasm"
+version = "0.1.0"
+edition = "2021"
+description = "MODULE 3 — WASM Component Model neural inference crate targeting wasm32-wasi"
+license = "MIT"
+
+# cdylib   → produces the .wasm component binary when targeting wasm32-wasi
+# rlib      → used by integration tests when building on the native host
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+# WIT Component Model bindings generator (proc-macro + runtime)
+wit-bindgen = "0.24"
+# Low-level WASM binary encoder used to serialise topology metadata
+wasm-encoder = "0.200"
+
+[dev-dependencies]
+# Available for WASM binary integration tests (running .wasm via the host);
+# not imported in the native unit/integration tests below.
+wasmtime = "19.0"

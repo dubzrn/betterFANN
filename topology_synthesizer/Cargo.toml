@@ -1,0 +1,14 @@
+[package]
+name = "topology-synthesizer"
+version = "0.1.0"
+edition = "2021"
+description = "MODULE 2 — TopologySynthesizer: multi-objective topology synthesis with Pareto optimisation and Schappeller Ur-Maschine sphere patterns"
+license = "MIT"
+
+[dependencies]
+petgraph = "0.6"
+rand     = "0.8"
+ndarray  = "0.15"
+
+[dev-dependencies]
+petgraph = "0.6"

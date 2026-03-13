@@ -1,0 +1,26 @@
+{
+  "dag_version": "1.0.0",
+  "description": "Build order for betterFANN platform — dependency graph ensures correctness",
+  "nodes": [
+    { "id": "our_neural_core",      "lang": "rust",       "phase": 2, "deps": [] },
+    { "id": "topology_synthesizer", "lang": "rust",       "phase": 2, "deps": [] },
+    { "id": "nexgen-neural-wasm",   "lang": "rust",       "phase": 2, "deps": ["our_neural_core"] },
+    { "id": "ephemeral_lifecycle",  "lang": "rust",       "phase": 2, "deps": [] },
+    { "id": "pq_transport",         "lang": "rust",       "phase": 2, "deps": [] },
+    { "id": "vortex_router",        "lang": "rust",       "phase": 3, "deps": ["our_neural_core"] },
+    { "id": "sphere_node",          "lang": "rust",       "phase": 3, "deps": ["vortex_router"] },
+    { "id": "eloptic_classifier",   "lang": "rust",       "phase": 3, "deps": ["vortex_router"] },
+    { "id": "cognitive_fabric",     "lang": "typescript", "phase": 4, "deps": [] },
+    { "id": "model_router",         "lang": "typescript", "phase": 4, "deps": [] },
+    { "id": "configmesh",           "lang": "go",         "phase": 5, "deps": [] },
+    { "id": "cognitive_pattern_gan","lang": "python",     "phase": 6, "deps": [] },
+    { "id": "cognitive-namespace",  "lang": "helm",       "phase": 7, "deps": ["sphere_node"] }
+  ],
+  "build_order": [
+    ["our_neural_core", "topology_synthesizer", "ephemeral_lifecycle", "pq_transport",
+     "cognitive_fabric", "model_router", "configmesh", "cognitive_pattern_gan"],
+    ["nexgen-neural-wasm", "vortex_router"],
+    ["sphere_node", "eloptic_classifier"],
+    ["cognitive-namespace"]
+  ]
+}

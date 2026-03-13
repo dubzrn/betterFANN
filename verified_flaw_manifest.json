@@ -1,0 +1,106 @@
+{
+  "manifest_version": "1.0.0",
+  "source_repo": "ruvnet/ruv-FANN",
+  "verified_at": "2026-03-13T14:28:54.573Z",
+  "flaws": [
+    {
+      "id": 1,
+      "title": "Scalar forward pass — no SIMD",
+      "severity": "high",
+      "file": "src/network.rs",
+      "lines": "312-330",
+      "description": "forward_pass_with_storage() uses scalar iteration through layers with .clone() per layer. src/training/mod.rs lines 496-521 uses nested scalar for loops for weight multiplication. No ndarray, no SIMD intrinsics.",
+      "fix_module": "our_neural_core"
+    },
+    {
+      "id": 2,
+      "title": "Fixed topology enum — no runtime synthesis",
+      "severity": "high",
+      "file": "ruv-swarm/crates/ruv-swarm-core/src/topology.rs",
+      "lines": "1-30",
+      "description": "TopologyType has 6 hardcoded variants (Mesh, Hierarchical, Clustered, Pipeline, Star, Custom). Custom variant is an escape hatch with zero generative capability. No Pareto-optimal graph synthesis anywhere.",
+      "fix_module": "topology_synthesizer"
+    },
+    {
+      "id": 3,
+      "title": "NPM-tethered WASM — no wasm32-wasi",
+      "severity": "medium",
+      "file": "ruv-swarm/npm/wasm/wasm-bindings-loader.mjs",
+      "lines": "32-53",
+      "description": "Requires Node.js fs, path, pathToFileURL. All WASM deployment routes through npm install ruv-swarm-wasm. Target is wasm32-unknown-unknown via wasm-pack, not wasm32-wasi.",
+      "fix_module": "nexgen-neural-wasm"
+    },
+    {
+      "id": 4,
+      "title": "No memory zeroing on dissolution",
+      "severity": "critical",
+      "file": "cuda-wasm/src/kernel/shared_memory.rs",
+      "lines": "123-136",
+      "description": "SharedMemory<T>::drop() calls alloc::dealloc but does NOT zero memory. No zeroize crate anywhere. cuda-wasm/tests/cuda_fidelity/memory_tests_extended.rs line 412: test only checks dropping does not panic.",
+      "fix_module": "ephemeral_lifecycle"
+    },
+    {
+      "id": 5,
+      "title": "Unsound transmute_copy in GPU path",
+      "severity": "critical",
+      "file": "cuda-wasm/src/neural_integration/gpu_neural_ops.rs",
+      "lines": "268-272",
+      "description": "unsafe { std::mem::transmute_copy(&x) } for arbitrary T — unsound for any T not layout-compatible with f32.",
+      "fix_module": "our_neural_core"
+    },
+    {
+      "id": 6,
+      "title": "Zero post-quantum cryptography",
+      "severity": "critical",
+      "file": "ALL Cargo.toml files",
+      "lines": "N/A",
+      "description": "No imports of pqcrypto-kyber, pqcrypto-dilithium, or any PQ library in any Cargo.toml across the entire repo.",
+      "fix_module": "pq_transport"
+    },
+    {
+      "id": 7,
+      "title": "Anthropic-only vendor lock",
+      "severity": "high",
+      "file": "ruflo — hardcoded model strings",
+      "lines": "N/A",
+      "description": "Hardcoded Anthropic model strings with zero failover routing.",
+      "fix_module": "model_router"
+    },
+    {
+      "id": 8,
+      "title": "Static .roomodes JSON — no dynamic synthesis",
+      "severity": "medium",
+      "file": "rUv-dev — static JSON",
+      "lines": "N/A",
+      "description": "No dynamic mode synthesis, no DAG execution.",
+      "fix_module": "cognitive_fabric"
+    },
+    {
+      "id": 9,
+      "title": "7 hardcoded cognitive patterns",
+      "severity": "medium",
+      "file": "cognitive patterns module",
+      "lines": "N/A",
+      "description": "No generative pattern capability.",
+      "fix_module": "cognitive_pattern_gan"
+    },
+    {
+      "id": 10,
+      "title": "Single-tenant architecture",
+      "severity": "high",
+      "file": "deployment configuration",
+      "lines": "N/A",
+      "description": "No namespace isolation, no multi-tenant fabric.",
+      "fix_module": "cognitive-namespace"
+    },
+    {
+      "id": 11,
+      "title": "Round-robin centrifugal dispatch",
+      "severity": "medium",
+      "file": "dispatch/load_balancer",
+      "lines": "N/A",
+      "description": "Standard load balancing with no thermal gradient awareness, no vortex routing.",
+      "fix_module": "vortex_router"
+    }
+  ]
+}

@@ -1,12 +1,17 @@
 [package]
 name = "betterFANN"
 version = "1.0.0"
+edition = "2021"
 authors = ["Natalia Ryabova <160236131+dubzrn@users.noreply.github.com>"]
-license = "LGPL 2.1"
+license = "LGPL-2.1-only"
 description = "Vortex physics-inspired & ground-up redesign of FANN (credit to Steffen Nissen). Its original implementation is described in Nissen's 2003 report Implementation of a Fast Artificial Neural Network Library (FANN)."
 readme = "README.md"
 homepage = "https://github.com/dubzrn"
 repository = "https://github.com/dubzrn/betterFANN"
-keywords = ["machine-learning", "neural-networks", "fann", "bindings", "SIMD", "CRDT", "vortex", "gann", "next-gen"]
-categories = ["machine-learning"]
+keywords = ["machine-learning", "neural-networks", "fann", "vortex", "next-gen"]
+categories = ["science::machine-learning"]
+
+[lib]
+name = "betterfann"
+path = "src/lib.rs"
 

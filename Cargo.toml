@@ -9,7 +9,7 @@ readme = "README.md"
 homepage = "https://github.com/dubzrn"
 repository = "https://github.com/dubzrn/betterFANN"
 keywords = ["machine-learning", "neural-networks", "fann", "vortex", "next-gen"]
-categories = ["machine-learning"]
+categories = ["api-bindings"]
 
 [lib]
 name = "betterfann"

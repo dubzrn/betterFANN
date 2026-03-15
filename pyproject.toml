@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "betterfann"
+version = "1.0.0"
+description = "Vortex physics-inspired & ground-up redesign of FANN (credit to Steffen Nissen). Its original implementation is described in Nissen's 2003 report Implementation of a Fast Artificial Neural Network Library (FANN)."
+readme = "README.md"
+license = { text = "LGPL-2.1-only" }
+authors = [
+    { name = "Natalia Ryabova", email = "160236131+dubzrn@users.noreply.github.com" },
+]
+requires-python = ">=3.9"
+keywords = ["machine-learning", "neural-networks", "fann", "vortex", "next-gen"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: GNU Lesser General Public License v2 (LGPLv2)",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "cognitive-pattern-gan>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "build>=1.0"]
+
+[project.urls]
+Homepage = "https://github.com/dubzrn"
+Repository = "https://github.com/dubzrn/betterFANN"
+"Bug Tracker" = "https://github.com/dubzrn/betterFANN/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["betterfann*"]

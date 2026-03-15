@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/header.svg" alt="betterFANN — AI-enhanced neural engine" width="100%"/>
+<img src="https://github.com/dubzrn/betterFANN/raw/main/assets/header.svg" alt="betterFANN — AI-enhanced neural engine" width="100%"/>
 
 <br/>
 

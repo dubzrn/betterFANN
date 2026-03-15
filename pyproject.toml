@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "betterfann"
-version = "1.0.0"
+version = "1.0.1"
 description = "Vortex physics-inspired & ground-up redesign of FANN (credit to Steffen Nissen). Its original implementation is described in Nissen's 2003 report Implementation of a Fast Artificial Neural Network Library (FANN)."
 readme = "README.md"
 license = { text = "LGPL-2.1-only" }

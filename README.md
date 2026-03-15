@@ -11,7 +11,7 @@
 <a href="#"><img src="https://img.shields.io/badge/TypeScript-5.0%2B-3178c6?style=flat-square&logo=typescript&logoColor=white"/></a>
 <a href="#"><img src="https://img.shields.io/badge/Helm-3.x-326ce5?style=flat-square&logo=helm&logoColor=white"/></a>
 <a href="#"><img src="https://img.shields.io/badge/WASM-wasm32--wasi-7c3aed?style=flat-square&logo=webassembly&logoColor=white"/></a>
-<a href="#"><img src="https://img.shields.io/badge/License-GPL_v1-blue.svg?style=flat-square&logo=opensourceinitiative&logoColor=white"/></a>
+<a href="#"><img src="https://img.shields.io/badge/License-GPL_v2-blue.svg?style=flat-square&logo=opensourceinitiative&logoColor=white"/></a>
 <a href="#"><img src="https://img.shields.io/badge/Tests-✓%20All%20Passing-22c55e?style=flat-square&logo=checkmarx&logoColor=white"/></a>
 <a href="#"><img src="https://img.shields.io/badge/Security-Post--Quantum%20PQC-f59e0b?style=flat-square&logo=letsencrypt&logoColor=white"/></a>
 <a href="#"><img src="https://img.shields.io/badge/SIMD-AVX2%20Optimised-f97316?style=flat-square&logo=intel&logoColor=white"/></a>

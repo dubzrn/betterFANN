@@ -16,6 +16,7 @@
 <a href="#"><img src="https://img.shields.io/badge/Security-Post--Quantum%20PQC-f59e0b?style=flat-square&logo=letsencrypt&logoColor=white"/></a>
 <a href="#"><img src="https://img.shields.io/badge/SIMD-AVX2%20Optimised-f97316?style=flat-square&logo=intel&logoColor=white"/></a>
 <a href="#"><img src="https://img.shields.io/badge/Modules-13%20Complete-0ea5e9?style=flat-square&logo=layers&logoColor=white"/></a>
+<a href="https://www.bestpractices.dev/projects/12203"><img src="https://www.bestpractices.dev/projects/12203/badge"></a>
 
 </div>
 
